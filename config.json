@@ -1,0 +1,99 @@
+{
+  "language": "fr",
+  "version": "1.0.0",
+  "discord": {
+    "botToken": "YOUR_DISCORD_BOT_TOKEN",
+    "clientId": "YOUR_DISCORD_APPLICATION_ID",
+    "guildIds": ["YOUR_GUILD_ID_FOR_INSTANT_COMMANDS"],
+    "registerCommandsOnStartup": true,
+    "status": "online",
+    "staffRoleId": "ROLE_ID_ALLOWED_TO_USE_ADMIN_COMMANDS",
+    "allowAdministrators": true
+  },
+  "nexalab": {
+    "baseUrl": "https://api.nexalab.fr",
+    "apiToken": "YOUR_RESELLER_OR_STUDIO_API_TOKEN",
+    "authMode": "reseller",
+    "studioId": "",
+    "timeoutMs": 30000,
+    "licenseListMode": "apiThenCache"
+  },
+  "shop": {
+    "name": "NexaScript",
+    "logoUrl": "https://cdn.discordapp.com/icons/000000000000000000/example.png",
+    "websiteUrl": "https://nexalab.fr",
+    "supportUrl": "https://discord.gg/example",
+    "footer": "Powered by NexaLab",
+    "colors": {
+      "primary": "#5865F2",
+      "success": "#57F287",
+      "warning": "#FEE75C",
+      "danger": "#ED4245",
+      "neutral": "#2B2D31"
+    }
+  },
+  "customerRole": {
+    "enabled": true,
+    "roleId": "CUSTOMER_ROLE_ID",
+    "giveOnLicenseCreate": true,
+    "removeWhenExpiredOrRevoked": true,
+    "dailyResync": true,
+    "dailyResyncHour": 3,
+    "expirationCheckMinutes": 15,
+    "claimCommandEnabled": true,
+    "grantMissingFromCacheOnSync": true,
+    "removeUnknownRoleHoldersOnSync": true
+  },
+  "licenseDefaults": {
+    "scriptId": "nx-garage",
+    "maxSlots": 1,
+    "prefix": "LIC",
+    "noteTemplate": "Discord: {staffTag} -> {customerTag} ({customerId})"
+  },
+  "delivery": {
+    "dmCustomerOnGive": true,
+    "includeLicenseKeyInStaffReply": true,
+    "includeLicenseKeyInLogs": false
+  },
+  "logging": {
+    "enabled": true,
+    "channelId": "LOG_CHANNEL_ID_OR_EMPTY",
+    "logDeniedPermission": true,
+    "logReleaseNotifications": true
+  },
+  "presence": {
+    "enabled": true,
+    "intervalSeconds": 30,
+    "activities": [
+      {
+        "type": "Watching",
+        "text": "NexaScript v{version}"
+      },
+      {
+        "type": "Playing",
+        "text": "Powered by NexaLab"
+      }
+    ]
+  },
+  "nameStyle": {
+    "enabled": false,
+    "applyOnStartup": true,
+    "reset": false,
+    "fontId": 10,
+    "effectId": 3,
+    "colors": ["#FFFFFF"],
+    "guildIds": []
+  },
+  "github": {
+    "enabled": true,
+    "repo": "NexaLabFrance/nexascript-discord",
+    "checkIntervalMinutes": 60,
+    "releaseUrl": "https://github.com/NexaLabFrance/nexascript-discord/releases/latest"
+  },
+  "sync": {
+    "onReady": true,
+    "afterClaim": true,
+    "afterLicenseMutation": true,
+    "memberFetchChunkSize": 1000
+  }
+}

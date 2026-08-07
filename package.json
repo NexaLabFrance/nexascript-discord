@@ -1,0 +1,28 @@
+{
+  "name": "nexascript-discord",
+  "version": "1.0.0",
+  "description": "Bot Discord NexaScript / NexaLab pour gérer les licences reseller/studio et les rôles clients.",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy": "node src/deploy-commands.js",
+    "check": "node -e \"for (const f of require('fs').readdirSync('src').filter(f=>f.endsWith('.js'))) require('child_process').execFileSync(process.execPath, ['--check', 'src/'+f], {stdio:'inherit'})\""
+  },
+  "keywords": [
+    "discord",
+    "discord.js",
+    "nexalab",
+    "nexascript",
+    "license",
+    "reseller"
+  ],
+  "author": "NexaLabFrance",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "discord.js": "^14.22.1"
+  }
+}

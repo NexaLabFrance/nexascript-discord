@@ -53,16 +53,20 @@ class BotLogger {
     });
   }
 
-  async release({ name, tag, url, body }) {
+  async release({ name, tag, currentVersion, url, body }) {
     if (!this.config.logging?.logReleaseNotifications) return null;
     const channel = await this.getChannel();
     if (!channel) return null;
     const lang = this.config.language || 'fr';
+    const fields = [];
+    if (currentVersion) fields.push({ name: 'Version', value: `Installed: \`v${currentVersion}\`\nLatest: \`${tag}\`` });
+    if (body) fields.push({ name: 'Changelog', value: truncate(body, 1800) });
+
     return sendToChannel(channel, this.config, {
       title: t(lang, 'release_title'),
       kind: 'success',
       description: t(lang, 'release_body', { name, tag, url }),
-      fields: body ? [{ name: 'Changelog', value: truncate(body, 1800) }] : [],
+      fields,
       buttons: url ? [{ type: 2, style: 5, label: 'GitHub Release', url, emoji: { name: '🚀' } }] : [],
     });
   }

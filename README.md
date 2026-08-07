@@ -1,25 +1,23 @@
 # NexaScript Discord
 
-Bot Discord officiel pour la gestion des licences NexaLab.
+Bot Discord officiel pour la gestion des licences [NexaLab](https://nexalab.fr).
 
 ## Fonctionnalités
 
 - Gestion complète des licences (création, modification, suspension, suppression)
 - Attribution automatique du rôle client selon le statut de licence
 - Commande `/claim` pour que les clients récupèrent leur rôle eux-mêmes
-- Logs des actions staff dans un salon dédié
-- Statut du bot personnalisable et rotatif
-- Support FR / EN
+- Logs des actions dans un salon dédié
+- Statut du bot
+- Support FR / EN (plus à venir)
 - Interface basée sur les Components V2 de Discord
-- Notifications automatiques des nouvelles releases GitHub
 - Style de pseudo Discord configurable pour les clients
 
 ## Prérequis
 
 - Node.js 20 ou supérieur
 - Un bot Discord configuré
-- Un token API NexaLab (reseller ou studio)
-- L'intent Discord `Server Members Intent` activé
+- Un token API NexaLab ([reseller](https://portal.nexalab.fr/reseller) ou [studio](https://portal.nexalab.fr/studio))
 
 Permissions Discord recommandées :
 
@@ -39,7 +37,7 @@ npm install
 cp config.example.json config.json
 ```
 
-Renseigner ensuite les paramètres requis dans `config.json` (voir `config.example.json` pour la liste complète des options disponibles).
+Renseigner ensuite les paramètres requis dans `config.json`.
 
 Déployer les slash commands :
 
@@ -56,3 +54,6 @@ ou
 ```bash
 node src/index.js
 ```
+
+# Vous avez un soucis ?
+Notre équipe sera ravis de vous aider sur [notre discord](https://nexalab.fr/discord)
